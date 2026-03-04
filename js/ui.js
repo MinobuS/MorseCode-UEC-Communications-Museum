@@ -618,10 +618,6 @@ function showQuizResult() {
         ${quizData.map(q => `<tr><td>${q.question}</td><td>${q.answer}</td></tr>`).join('')}
       </tbody>
     </table>
-    <div class="sns-share">
-      <a class="sns-btn twitter" href="https://twitter.com/intent/tweet?text=${twitterFullText}" target="_blank" rel="noopener">${twitterLabel}</a>
-      <a class="sns-btn line" href="https://social-plugins.line.me/lineit/share?url=${shareUrl}&text=${shareText}" target="_blank" rel="noopener">${lineLabel}</a>
-    </div>
     <button class="main-button" onclick="goToStep(0);resetQuiz();">${buttonText}</button>
   `;
   document.getElementById("quiz-result").innerHTML = html;
