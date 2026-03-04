@@ -105,6 +105,15 @@
        <br>
       <button class="GoToHenkan-button" onclick="startQuiz()" id = "next4-1">クイズ</button>
       <button class="GoToHenkan-button" onclick="goToStep(7)" id = "GoToHenkan">分析・変換</button>
+      <br><br>
+      <div class="inline-character-area">
+          <img src="assets/png/喜びのマールス.png" alt="マールス" class="inline-character-img">
+          
+          <div class="inline-character-balloon" id = "QR">
+            自分のスマートフォンでもモールス信号体験アプリを使えるよ！(MP3ダウンロードができるようになってるよ。) 下のQRコードを読み取ってこのアプリにアクセスしてみてね！
+          </div>
+        </div>
+        <img src="assets/png/モールス信号体験アプリQR.png" alt="アプリのQRコード" class="inline-character-img">
     </div>
 
     <!-- 名前入力画面 -->
@@ -194,7 +203,7 @@
         </div>
       </div>
       <div class="convert-buttons">
-        <button class="convert-buttons" id="downloadNameBtn" style="min-width: 130px;">MP3ダウンロード</button>
+        <button class="convert-buttons" id="downloadNameBtn" style="min-width: 130px;" disabled>MP3ダウンロード</button>
       </div>
       <br><br>
          <div class="inline-character-area">
@@ -362,17 +371,17 @@
             <div class="panel" id="analyze-panel">
               <div class="panel-header" id = "kaiseki"><h3>解析 (Analyze)</h3></div>
               <div class="panel-content">
-                 <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "kaiseki_help">ファイルを選択して「解析する」を押すと、検出されたモールス記号が表示されます。</div>
+                 <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "kaiseki_help">ファイルを選択すると検出されたモールス記号が表示されます。(ミュージアム内のアプリではファイルを選択できません)</div>
                  <div class="help-text" style='text-align: left;' id = "language-use2">
         <b>使用言語: 日本語(かな) 使用中！</b><br>
         　　　　: 日本語(ローマ字)<br>
         　　　　: English Use English
       </div>
-                  <div class="analyze-row">
+                  <!-- <div class="analyze-row">
         <label for="audioFile" id ="audiofile">モールス音声(mp3)をアップロードして解析:</label>
         <input type="file" id="audioFile" accept="audio/*" />
-                </div>
-                <label for="decodeInput" id="decodeInputLabel">または、モールス信号を直接入力:</label>
+                </div> -->
+                <label for="decodeInput" id="decodeInputLabel">モールス信号を直接入力:</label>
                 <textarea id="decodeInput" rows="2" placeholder="変換したいモールス信号をボタン入力、または貼り付け。" style="width:100%; font-size:1.2em; margin-bottom: 5px;" oninput="decodeMorseFromText()" inputmode="none"></textarea>
                 <div class="morse-pad" role="group" aria-label="モールス入力パッド">
         <button class="morse-btn dot" onclick="appendText('・','decodeInput');playDot();" aria-label="短音" title="短音 (・)">・</button>
@@ -382,7 +391,7 @@
           <button class="control-btn delete" onclick="deleteLast('decodeInput')" aria-label="1文字削除">DEL</button>
         <button class="control-btn play" onclick="playMorse('decodeInput');" aria-label="確認">🔊</button>
       </div>
-                 <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "help-analyzeText">入力したファイル、テキストは自動で解析されます。</div>
+                 <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "help-analyzeText">入力したテキストは自動で解析されます。</div>
                 <div class="analysis-area" style="margin-top: 10px; display:flex; flex-direction:column; gap:8px;">
                 <textarea id="analyzedMorse" rows="5" readonly style="font-size:1.1em; width:100%;" ></textarea>
                 <textarea id="analyzedMorseToIroha" rows="5" readonly style="font-size:1.1em; width:100%;"></textarea>
@@ -402,7 +411,7 @@
         　　　　: English Use English
       </div>
             <input type="text" id="WantToChange" placeholder="変換したい文字を入力" value="">
-            <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "henkan_help2">入力したテキストは自動でモールスに変換されます。コピーや再生、MP3ダウンロードが可能です。</div>
+            <div class="help-text" style="font-size:0.95em; color:#5c6b73;" id = "henkan_help2">入力したテキストは自動でモールスに変換されます。コピーや再生、MP3ダウンロードが可能です。(ミュージアム内のアプリではダウンロードはできません)</div>
         <textarea id="WantToChangeOutput" rows="2" readonly style="font-size:1.2em; flex:1;"></textarea>
         <textarea id="CorrespondWantToChangeOutput" rows="10" readonly style="font-size:1.2em; flex:1;"></textarea>
       <div class="want-to-change-row" style="margin-top: 16px; display:flex; justify-content:center; width:100%;">
@@ -414,7 +423,7 @@
             
             <div style="display:flex; gap:8px; align-items:center;">
               <button class="convert-buttons" id="playWantToChangeBtn" style="min-width: 100px;">🔊 再生</button>
-              <button class="convert-buttons" id="downloadWantToChangeBtn" style="min-width: 130px;">MP3ダウンロード</button>
+              <button class="convert-buttons" id="downloadWantToChangeBtn" style="min-width: 130px; background: #aaaaaa;" disabled>MP3ダウンロード</button>
             </div>
             
           </div>

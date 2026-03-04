@@ -643,6 +643,7 @@ button:active {
   filter: grayscale(60%);
   pointer-events: none;
 }
+
 #quiz-next-btn:disabled:hover,
 .main-button:disabled:hover {
   background: #b0b8c9 !important;
@@ -863,6 +864,16 @@ button:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.convert-buttons:disabled {
+  background: #b0b8c9 !important;   /* グレー系で無効感 */
+  color: #fff !important;
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  filter: grayscale(60%);
+  pointer-events: none;
 }
 
 .morse-buttons {

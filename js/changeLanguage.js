@@ -12,7 +12,7 @@ function changeLanguage(languageName){
     romajiResult.value = '';
     romajiResult.style.display = "none";
 
-    document.getElementById('audioFile').value = '';
+    //ミュージアム用 document.getElementById('audioFile').value = '';
 
     if(languageName === "日本語" || languageName === "ローマ字"){
 
@@ -40,6 +40,8 @@ function changeLanguage(languageName){
 
         document.getElementById("GoToHenkan").innerHTML = "分析・変換";
         document.getElementById("next4-1").innerHTML = "クイズ";
+
+        document.getElementById("QR").innerHTML = "自分のスマートフォンでもモールス信号体験アプリを使えるよ！(MP3ダウンロードができるようになってるよ。) 下のQRコードを読み取ってこのアプリにアクセスしてみてね！";
 
 
         // ステップごとのラベル
@@ -122,11 +124,11 @@ function changeLanguage(languageName){
         document.getElementById("input_henkan").innerHTML = "モールスの解析や変換が出来るよ！";
         document.getElementById("kaiseki").innerHTML = "解析 (Upload & Analyze)";
         if(languageName === "日本語" ){
-            document.getElementById("kaiseki_help").innerHTML = "ファイルを選択して「解析する」を押すと、検出されたモールス記号が表示されます。";
+            document.getElementById("kaiseki_help").innerHTML = "ファイルを選択すると、検出されたモールス記号が表示されます。(音声ファイルの解析はミュージアム内のアプリではできません)";
         }else if(languageName === "ローマ字" ){
-            document.getElementById("kaiseki_help").innerHTML = "ファイルを選択して「解析する」を押すと、検出されたモールス記号が表示されます。";
+            document.getElementById("kaiseki_help").innerHTML = "ファイルを選択すると、検出されたモールス記号が表示されます。(音声ファイルの解析はミュージアム内のアプリではできません)";
         }
-        document.getElementById("audiofile").innerHTML = "モールス音声(mp3)をアップロードして解析:";
+        //ミュージアム用document.getElementById("audiofile").innerHTML = "モールス音声(mp3)をアップロードして解析:";
         document.getElementById("h3_henkan").innerHTML = "変換 (Convert Text)";
         if(languageName === "日本語" ){
             document.getElementById("henkan_help").innerHTML = "ここに変換したい文字を入力してください。使用言語には注意してください。";
@@ -136,8 +138,8 @@ function changeLanguage(languageName){
         document.getElementById("help-analyzeText").innerHTML = "入力したファイル、テキストは自動で解析されます。";
         document.getElementById("decodeInput").placeholder = "変換したいモールス信号をボタン入力、または貼り付け。";
         document.getElementById("WantToChange").placeholder = "変換したい文字を入力";
-        document.getElementById("decodeInputLabel").innerHTML = "または、モールス信号を直接入力:";
-        document.getElementById("henkan_help2").innerHTML = "入力したテキストは自動でモールスに変換されます。コピーや再生、MP3ダウンロードが可能です。";
+        document.getElementById("decodeInputLabel").innerHTML = "モールス信号を直接入力:";
+        document.getElementById("henkan_help2").innerHTML = "入力したテキストは自動でモールスに変換されます。コピーや再生、MP3ダウンロードが可能です。(ミュージアム内のアプリではMP3ダウンロードはできません)";
         document.getElementById("copyWantToChangeBtn").innerHTML = "コピー";
         document.getElementById("playWantToChangeBtn").innerHTML = "🔊 再生";
         document.getElementById("downloadWantToChangeBtn").innerHTML = "MP3ダウンロード";
@@ -158,7 +160,7 @@ function changeLanguage(languageName){
 
         // マールスの言葉
         document.getElementById("marusu3").innerHTML = "それぞれの文字はこんな感じで対応しているよ！";
-        document.getElementById("marusu4").innerHTML = "実際にモールスを聞いてみよう！音をダウンロードすることもできるよ！";
+        document.getElementById("marusu4").innerHTML = "実際にモールスを聞いてみよう！聞いたことはあるかな？(ミュージアム内のアプリでは音のダウンロードはできないよ！ごめんね！）";
         if(document.getElementById("next2").style.display === "none"){
             document.getElementById('marusu5').innerHTML = "君の名前には未対応の文字「？」が含まれているよ... 名前設定に戻って、未対応の文字を削除しよう...！";
         }else{
@@ -195,6 +197,7 @@ function changeLanguage(languageName){
         document.getElementById("start").innerHTML = "Start";
         document.getElementById("GoToHenkan").innerHTML = "Conversion only";
         document.getElementById("next4-1").innerHTML = "Quiz";
+        document.getElementById("QR").innerHTML = "You can also use the Morse code experience app on your smartphone! (MP3 download is available.) Scan the QR code below to access this app!";
 
         // ステップごとのラベル
         for(let i=0; i<=3; i++){
@@ -271,15 +274,15 @@ function changeLanguage(languageName){
         document.getElementById("mo-rusuhenkanjo").innerHTML = "Morse Code Station";
         document.getElementById("input_henkan").innerHTML = "You can analyze and convert Morse code!";
         document.getElementById("kaiseki").innerHTML = "解析 (Upload & Analyze)";
-        document.getElementById("kaiseki_help").innerHTML = "Select a file or input Morce code to display the detected Morse code.";
-        document.getElementById("audiofile").innerHTML = "Upload Morse code audio (mp3) for analysis:";
-        document.getElementById("decodeInputLabel").innerHTML = "Or, enter Morse code directly:";
+        document.getElementById("kaiseki_help").innerHTML = "Select a file or input Morce code to display the detected Morse code. (Audio file analysis is not available in the museum's app)";
+        //ミュージアム用document.getElementById("audiofile").innerHTML = "Upload Morse code audio (mp3) for analysis:";
+        document.getElementById("decodeInputLabel").innerHTML = "Enter Morse code directly:";
         document.getElementById("h3_henkan").innerHTML = "変換 (Convert Text)";
         document.getElementById("henkan_help").innerHTML = "Enter the text you want to convert here. Please be mindful of the language used.";
         document.getElementById("help-analyzeText").innerHTML = "Input files and text are automatically analyzed.";
         document.getElementById("decodeInput").placeholder = "Please input or paste the Morse code you want to convert.";
         document.getElementById("WantToChange").placeholder = "Enter the text you want to convert";
-        document.getElementById("henkan_help2").innerHTML = "The text you enter is automatically converted to Morse code. You can copy, play back, or download it as an MP3 file.";
+        document.getElementById("henkan_help2").innerHTML = "The text you enter is automatically converted to Morse code. You can copy, play back, or download it as an MP3 file.(MP3 downloads are not available on the museum's app)";
         document.getElementById("copyWantToChangeBtn").innerHTML = "Copy";
         document.getElementById("playWantToChangeBtn").innerHTML = "🔊 Play";
         document.getElementById("downloadWantToChangeBtn").innerHTML = "MP3 Download";
@@ -301,7 +304,7 @@ function changeLanguage(languageName){
 
         // マールスの言葉
         document.getElementById("marusu3").innerHTML = "This is how each character corresponds to the code!";
-        document.getElementById("marusu4").innerHTML = "Let's listen to actual Morse code! You can also download the audio!";
+        document.getElementById("marusu4").innerHTML = "Let's listen to actual Morse code! Have you heard it before? (MP3 download is not available in the museum's app, sorry!)";
         if(document.getElementById("next2").style.display === "none"){
                   document.getElementById('marusu5').innerHTML = "Undefined character \"?\" is included, so you cannot proceed to input... Go back to name setting and remove the undefined character...!";
         }else{
@@ -359,6 +362,8 @@ function changeKidsMode(){
         document.getElementById("start").innerHTML = "はじめてみる！";
         document.getElementById("GoToHenkan").innerHTML = "へんかんだけする！";
         document.getElementById("next4-1").innerHTML = "くいず！";
+        document.getElementById("QR").innerHTML = "すまーとふぉんでももーるすしんごうのたいけんができるよ！(MP3だうんろーどもできるよ。)したのQRこーどをよみとってこのあぷりをつかってみてね！";
+
 
         // ステップごとのラベル
         for(let i=0; i<=3; i++){
@@ -459,11 +464,11 @@ function changeKidsMode(){
         document.getElementById("input_henkan").innerHTML = "もーるすの「かいせき(しらべる)」や「へんかん(つくる)」ができるよ！";
         document.getElementById("kaiseki").innerHTML = "かいせき";
         if(lang === "日本語" ){
-            document.getElementById("kaiseki_help").innerHTML = "「かいせき」したい（しらべたい）おとのふぁいるをえらんでね！";
+            document.getElementById("kaiseki_help").innerHTML = "「かいせき」したい（しらべたい）おとのふぁいるをえらんでね！ (みゅーじあむないのあぷりではおとのふぁいるのかいせきはできないよ)";
         }else if(lang === "ローマ字" ){
-            document.getElementById("kaiseki_help").innerHTML = "「かいせき」したいおとのふぁいるをえらんでね！";
+            document.getElementById("kaiseki_help").innerHTML = "「かいせき」したいおとのふぁいるをえらんでね！ (みゅーじあむないのあぷりではおとのふぁいるのかいせきはできないよ)";
         }
-        document.getElementById("audiofile").innerHTML = "おとのふぁいるをえらんで「かいせき」:";
+        //ミュージアム用document.getElementById("audiofile").innerHTML = "おとのふぁいるをえらんで「かいせき」:";
         document.getElementById("decodeInputLabel").innerHTML ="ここにじぶんでもーるすしんごうをいれてもいいよ！";
         document.getElementById("decodeInputLabel").innerHTML ="かんたんにもーるすしんごうをしらべられるよ！";
         document.getElementById("h3_henkan").innerHTML = "へんかん";
@@ -476,7 +481,7 @@ function changeKidsMode(){
         document.getElementById("decodeInput").placeholder = "もーるすしんごうをぼたんでつくったり、はりつけたりしてね。";
         document.getElementById("WantToChange").placeholder = "「へんかん」したいもじをいれてね！";
         document.getElementById("henkan_help2").innerHTML = "にゅうりょくしたもじは、もーるすしんごうにへんかんされて、したのばしょでみれるよ！<br>\
-        へんかんされたもーるすしんごうは「こぴー」したり「さいせい（おとをきく）」したり「MP3（おとの）だうんろーど」ができるよ！";
+        へんかんされたもーるすしんごうは「こぴー」したり「さいせい（おとをきく）」したり「MP3（おとの）だうんろーど」ができるよ！(みゅーじあむないのあぷりではMP3だうんろーどはできないよ。)";
         document.getElementById("copyWantToChangeBtn").innerHTML = "こぴーする";
         document.getElementById("playWantToChangeBtn").innerHTML = "🔊 さいせいする";
         document.getElementById("downloadWantToChangeBtn").innerHTML = "MP3（おとの）だうんろーど";
@@ -500,7 +505,7 @@ function changeKidsMode(){
         // マールスの言葉
         document.getElementById("marusu3").innerHTML = "それぞれのおとはこんなかんじだよ！<br>\
         たとえば「あ」は「・－」ってかくんだ！いちばんみぎにある「／」はもじをくぎってるよ！";
-        document.getElementById("marusu4").innerHTML = "この「・」とか「ー」がどんなおとをしているのか、きになるね！したのぼたんをおしてきいてみよう！おとをだうんろーどすることもできるよ。";
+        document.getElementById("marusu4").innerHTML = "この「・」とか「ー」がどんなおとをしているのか、きになるね！したのぼたんをおしてきいてみよう！(みゅーじあむないのあぷりではMP3だうんろーどはできないよ。ごめんね！)";
         if(document.getElementById("next2").style.display === "none"){
             document.getElementById("marusu5").innerHTML = "いま、きみのなまえに「？」があるね。「？」のぶぶんは、もーるすをたいけんできないから、なまえをいれなおそう！よくわからなかったらおとなのひとにきいてみてね！";
         }else{
@@ -538,6 +543,7 @@ function changeKidsMode(){
         document.getElementById("volume").innerHTML = "Loudness"; // または Sound Volume
         document.getElementById("start").innerHTML = "Let's Start!";
         document.getElementById("next4-1").innerHTML = "Quiz!";
+        document.getElementById("QR").innerHTML = "You can also experience Morse code on your smartphone! (MP3 downloads are also available.) Scan the QR code below to try it out!";
         
         // ステップごとのラベル
         for(let i=0; i<=3; i++){
@@ -602,9 +608,9 @@ function changeKidsMode(){
         document.getElementById("mo-rusuhenkanjo").innerHTML = "Morse Lab";
         document.getElementById("input_henkan").innerHTML = "Let's check or make Morse Code!";
         document.getElementById("kaiseki").innerHTML = "Check Sound";
-        document.getElementById("kaiseki_help").innerHTML = "Choose a sound file and click 'Check Sound'.<br>We are using English now.";
-        document.getElementById("audiofile").innerHTML = "Choose MP3 file:";
-        document.getElementById("decodeInputLabel").innerHTML ="Or, type Morse code here:";
+        document.getElementById("kaiseki_help").innerHTML = "Choose a sound file. The Morse code in the file will be displayed. (Audio file analysis is not available in the museum's app)";
+        //ミュージアム用document.getElementById("audiofile").innerHTML = "Choose MP3 file:";
+        document.getElementById("decodeInputLabel").innerHTML ="Type Morse code here:";
         document.getElementById("help-analyzeText").innerHTML = "Input files and text are automatically analyzed.";
         document.getElementById("decodeInput").placeholder = "Please input or paste the Morse code you want to convert.";
 
@@ -635,7 +641,7 @@ function changeKidsMode(){
 
         // マールスの説明セリフ (短くわかりやすく)
         document.getElementById("marusu3").innerHTML = "Look at the chart!<br>'A' becomes '・－'. Short sound and Long sound!";
-        document.getElementById("marusu4").innerHTML = "Let's listen to the sound! You can save it too.";
+        document.getElementById("marusu4").innerHTML = "Let's listen to the sound! Have you heard Morse code before? (MP3 download is not available in the museum's app, sorry!)";
         if(document.getElementById("next2").style.display === "none"){
             document.getElementById("marusu5").innerHTML = "There is a '?' in your name. I can't read it!<br>Let's fix your name. Please ask an adult for help.";
         }else{
